@@ -5,8 +5,7 @@ import SearchBar from '../components/home/SearchBar'
 import Categories from '../components/home/Categories'
 import RestaurantItems, { localRestaurants } from '../components/home/RestaurantItems'
 import { SafeAreaView } from 'react-native-safe-area-context'
-
-const YELP_API_KEY = '_Uk3KxIuc1ufrBeUmHavtNhj4X-Jg6VVHUO2X1WgcHqLrPocFKYfp3rmS8fUyZjvmwLmSbyvWYHcO5xDuC75qubJ0S5AEAj91g9fuhmAnn274nZb-MjWguF2gC7yY3Yx'
+import ENVIRONMENT from '../environment'
 
 export default function Home({navigation}) {
   const [reastaurantData,setRestaurantData] = useState(localRestaurants)
@@ -17,7 +16,7 @@ export default function Home({navigation}) {
 
     const apiOptions = {
       headers: {
-        Authorization: `Bearer ${YELP_API_KEY}`
+        Authorization: `Bearer ${ENVIRONMENT.YELP_API_KEY}`
       }
     }
 
